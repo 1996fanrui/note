@@ -25,6 +25,7 @@ public class SortPerformanceTest {
 
     @Before
     public void before() {
+        System.out.println( "before..." );
         array = new int[arrayCount][arrayLength];
 
         for (int i=0; i<arrayCount; i++ ){
@@ -38,49 +39,40 @@ public class SortPerformanceTest {
 
     @After
     public void after(){
+        for (int i=0; i<arrayCount; i++ ) {
+            sort.sort(array[i]);
+            validate(array[i]);
+        }
         endTime = System.currentTimeMillis();
         System.out.println( (endTime - startTime) + "ms" );
     }
 	
 	@Test
 	public void testBubbleSort(){
-        sort = new BubbleSort();
-
-        for (int i=0; i<arrayCount; i++ ) {
-            sort.sort(array[i]);
-        }
+        sort = new BubbleSort();        // 2000ms
 	}
 
 	@Test
 	public void testInsertSort(){
         // 插入排序性能要比冒泡排序快5倍以上
-		sort = new InsertSort();
-        for (int i=0; i<arrayCount; i++ ) {
-            sort.sort(array[i]);
-        }
+		sort = new InsertSort();    // 300ms
 	}
 
-//	@Test
-//	public void testSelectionSort(){
-//		sort = new SelectionSort();
-//		sort.sort(array);
-//		validate();
-//	}
-//
-//	@Test
-//	public void testMergeSort(){
-//		sort = new MergeSort();
-//		sort.sort(array);
-//		validate();
-//
-//	}
-//
-//	@Test
-//	public void testQuickSort(){
-//		sort = new QuickSort();
-//		sort.sort(array);
-//		validate();
-//	}
+	@Test
+	public void testSelectionSort(){
+		sort = new SelectionSort(); //  800ms
+	}
+
+	@Test
+	public void testMergeSort(){
+		sort = new MergeSort();     // 400ms（如果数组长度变成10000，500个数组，那么归并会比插入排序彪悍很多）
+	}
+
+	@Test
+	public void testQuickSort(){
+		sort = new QuickSort();     // 200ms（如果数组长度变成10000，500个数组，那么快排性能很彪悍）
+	}
+
 //	@Test
 //	public void testInsertOptimizeSort(){
 //		sort = new InsertOptimizeSort();

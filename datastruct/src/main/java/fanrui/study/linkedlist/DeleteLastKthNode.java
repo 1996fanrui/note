@@ -1,5 +1,9 @@
 package fanrui.study.linkedlist;
 
+/**
+ * @author fanrui
+ * @time 2019-03-21 23:06:38
+ */
 public class DeleteLastKthNode {
 
     /**
@@ -18,7 +22,9 @@ public class DeleteLastKthNode {
             ++i;
         }
 
-        if (fast == null) return list;
+        if (fast == null) {
+            return list;
+        }
 
         Node slow = list;
         Node prev = null;

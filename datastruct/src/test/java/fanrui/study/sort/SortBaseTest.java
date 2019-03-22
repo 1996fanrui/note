@@ -16,55 +16,52 @@ import org.junit.Test;
  * @see QuickSort
  */
 public class SortBaseTest {
-	int[] array = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+	int[] array ;
 	ISort sort;
 
     @Before
     public void before(){
-        int[] arrayIni = {10, 9, 8, 7, 6, 5, 4, 4, 1, -1};
+        int[] arrayIni = {10, 9, 8, 7, 6, 5, 4, 4, 1, -1, 2};
+        array = new int[arrayIni.length];
         for(int i = 0; i < array.length; i++){
             array[i] = arrayIni[i];
         }
     }
+
+    @After
+	public void after(){
+		sort.sort(array);
+		printArray(array);
+		validate();
+	}
 	
 	@Test
 	public void testBubbleSort(){
 		sort = new BubbleSort();
-		sort.sort(array);
-		printArray(array);
-		validate();
 	}
 
 	@Test
 	public void testInsertSort(){
 		sort = new InsertSort();
-		sort.sort(array);
-		printArray(array);
-		validate();
 	}
 
 
-//	@Test
-//	public void testSelectionSort(){
-//		sort = new SelectionSort();
-//		sort.sort(array);
-//		validate();
-//	}
-//
-//	@Test
-//	public void testMergeSort(){
-//		sort = new MergeSort();
-//		sort.sort(array);
-//		validate();
-//
-//	}
-//
-//	@Test
-//	public void testQuickSort(){
-//		sort = new QuickSort();
-//		sort.sort(array);
-//		validate();
-//	}
+	@Test
+	public void testSelectionSort(){
+		sort = new SelectionSort();
+	}
+
+	@Test
+	public void testMergeSort(){
+		sort = new MergeSort();
+	}
+
+	@Test
+	public void testQuickSort(){
+		sort = new QuickSort();
+	}
+
+
 //	@Test
 //	public void testInsertOptimizeSort(){
 //		sort = new InsertOptimizeSort();
@@ -72,7 +69,7 @@ public class SortBaseTest {
 //		validate();
 //	}
 
-	private void printArray(int[] printArray){
+	private void printArray(int[] printArray) {
         System.out.print("[");
         for (int a:printArray){
 			System.out.print(a + ",");

@@ -1,5 +1,9 @@
 package fanrui.study.linkedlist;
 
+/**
+ * @author fanrui
+ * @time 2019-03-21 23:06:30
+ */
 public class CheckCircle {
 
     /**

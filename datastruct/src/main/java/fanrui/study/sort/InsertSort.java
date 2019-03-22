@@ -9,7 +9,9 @@ public class InsertSort implements ISort {
 
 	public void sort(int[] array) {
 
-		if (array.length <= 1) return;
+		if (array.length <= 1) {
+			return;
+		}
 
 		for (int i = 1; i < array.length; ++i) {
 			int value = array[i];
@@ -17,12 +19,14 @@ public class InsertSort implements ISort {
 			// 查找插入的位置
 			for (; j >= 0; --j) {
 				if (array[j] > value) {
-					array[j+1] = array[j];  // 数据移动
+					// 数据移动
+					array[j+1] = array[j];
 				} else {
 					break;
 				}
 			}
-			array[j+1] = value; // 插入数据
+			// 插入数据
+			array[j+1] = value;
 		}
 	}
 
