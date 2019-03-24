@@ -22,6 +22,7 @@ public class SortBaseTest {
     @Before
     public void before(){
         int[] arrayIni = {10, 9, 8, 7, 6, 5, 4, 4, 1, -1, 2};
+        arrayIni = new int[]{10, 9, 8, 7, 6, 5, 4, 4, 1, 2, 4, 4, 1, 2, 4, 4, 1, 2, 4, 4, 1, 2, 4, 4, 1, 2};
         array = new int[arrayIni.length];
         for(int i = 0; i < array.length; i++){
             array[i] = arrayIni[i];
@@ -60,6 +61,11 @@ public class SortBaseTest {
 	public void testQuickSort(){
 		sort = new QuickSort();
 	}
+
+    @Test
+    public void testCountingSort(){
+        sort = new CountingSort();
+    }
 
 
 //	@Test

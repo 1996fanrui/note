@@ -17,7 +17,7 @@ import org.junit.Test;
  */
 public class SortPerformanceTest {
     private int arrayCount = 10000;
-    private int arrayLength = 500;
+    private int arrayLength = 50000;
     private int[][] array;
     private ISort sort;
     private long startTime;
@@ -72,6 +72,12 @@ public class SortPerformanceTest {
 	public void testQuickSort(){
 		sort = new QuickSort();     // 200ms（如果数组长度变成10000，500个数组，那么快排性能很彪悍）
 	}
+
+    @Test
+    public void testCountingSort(){
+        sort = new CountingSort();      // 10000个 长度为50000的数组，排序2468ms
+    }
+
 
 //	@Test
 //	public void testInsertOptimizeSort(){
