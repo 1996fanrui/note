@@ -5,7 +5,7 @@ import os
 from optparse import OptionParser
 
 
-# Mac执行 
+# Mac执行  root用户执行
 # su root
 # python /Users/fanrui/Documents/note/hbase/python/importHbase.py -t tablename
 if __name__ == '__main__':
@@ -50,6 +50,8 @@ if __name__ == '__main__':
     
     if status > 0 :
         sys.exit(1)
-    
+
+    os.system( 'mv /Users/fanrui/Downloads/{tableName}.zip /Users/fanrui/Downloads/recycle_bin'.format(tableName=tableName) )
+
     print 'done'
 

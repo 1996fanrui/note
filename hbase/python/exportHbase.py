@@ -4,7 +4,7 @@ import sys
 import os
 from optparse import OptionParser
 
-# azkaban机器执行
+# azkaban机器 root用户执行
 # cd /data/dmp/test/test/hbase_export
 # python exportHbase.py -t table_name -s start_timestamp -e end_timestamp
 if __name__ == '__main__':
@@ -39,9 +39,9 @@ if __name__ == '__main__':
     if status > 0 :
         sys.exit(1)
     
-    status = os.system( 'rm -rf /data/dmp/test/test/hbase_export/{tableName}'.format(tableName=tableName) )
+    os.system( 'rm -rf /data/dmp/test/test/hbase_export/{tableName}'.format(tableName=tableName) )
 
-    status = os.system( 'rm -rf /data/dmp/test/test/hbase_export/{tableName}.zip'.format(tableName=tableName) )
+    os.system( 'rm -f /data/dmp/test/test/hbase_export/{tableName}.zip'.format(tableName=tableName) )
 
     status = os.system( 'hdfs dfs -get /tmp/hbase_export_test/{tableName}'.format(tableName=tableName) )
     
@@ -57,6 +57,10 @@ if __name__ == '__main__':
     
     if status > 0 :
         sys.exit(1)
+
+    os.system( 'rm -rf /data/dmp/test/test/hbase_export/{tableName}'.format(tableName=tableName) )
+
+    os.system( 'rm -f /data/dmp/test/test/hbase_export/{tableName}.zip'.format(tableName=tableName) )
 
     print 'done'
 
