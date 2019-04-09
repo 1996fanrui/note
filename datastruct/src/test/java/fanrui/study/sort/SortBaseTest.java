@@ -46,6 +46,11 @@ public class SortBaseTest {
 		sort = new InsertSort();
 	}
 
+	@Test
+	public void testOptimizeInsertSort(){
+		sort = new OptimizeInsertSort();
+	}
+
 
 	@Test
 	public void testSelectionSort(){

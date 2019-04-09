@@ -12,20 +12,27 @@ package fanrui.study.sort;
 public class BubbleSort implements ISort {
 
 	public void sort(int[] array) {
-		if (array.length <= 1) return;
+		if (array.length <= 1) {
+			return;
+		}
 
 		for (int i = 0; i < array.length; ++i) {
 			// 提前退出冒泡循环的标志位
 			boolean flag = false;
 			for (int j = 0; j < array.length - i - 1; ++j) {
-				if ( array[j] > array[j+1] ) { // 交换
+				// 交换
+				if ( array[j] > array[j+1] ) {
 					int tmp = array[j];
 					array[j] = array[j+1];
 					array[j+1] = tmp;
-					flag = true;  // 表示有数据交换
+					// 表示有数据交换
+					flag = true;
 				}
 			}
-			if (!flag) break;  // 没有数据交换，提前退出
+			// 没有数据交换，提前退出
+			if (!flag) {
+				break;
+			}
 		}
 	}
 

@@ -17,7 +17,9 @@ import org.junit.Test;
  */
 public class SortPerformanceTest {
     private int arrayCount = 10000;
-    private int arrayLength = 50000;
+    private int arrayLength = 500;
+//    private int arrayCount = 500;
+//    private int arrayLength = 10000;
     private int[][] array;
     private ISort sort;
     private long startTime;
@@ -49,28 +51,33 @@ public class SortPerformanceTest {
 	
 	@Test
 	public void testBubbleSort(){
-        sort = new BubbleSort();        // 2000ms
+        sort = new BubbleSort();        // 数组长度变成 500，10000个数组 2000ms
 	}
 
-	@Test
-	public void testInsertSort(){
+    @Test
+    public void testInsertSort(){
         // 插入排序性能要比冒泡排序快5倍以上
-		sort = new InsertSort();    // 300ms
-	}
+        sort = new InsertSort();    // 数组长度变成 500，10000个数组 300ms
+    }
+
+    @Test
+    public void testOptimizeInsertSort(){
+        sort = new OptimizeInsertSort();    // 数组长度变成 500，10000个数组 300ms
+    }
 
 	@Test
 	public void testSelectionSort(){
-		sort = new SelectionSort(); //  800ms
+		sort = new SelectionSort(); //  数组长度变成 500，10000个数组 800ms
 	}
 
 	@Test
 	public void testMergeSort(){
-		sort = new MergeSort();     // 400ms（如果数组长度变成10000，500个数组，那么归并会比插入排序彪悍很多）
+		sort = new MergeSort();     // 数组长度变成 500，10000个数组 400ms（如果数组长度变成10000，500个数组，那么归并会比插入排序彪悍很多）
 	}
 
 	@Test
 	public void testQuickSort(){
-		sort = new QuickSort();     // 200ms（如果数组长度变成10000，500个数组，那么快排性能很彪悍）
+		sort = new QuickSort();     // 数组长度变成 500，10000个数组 200ms（如果数组长度变成10000，500个数组，那么快排性能很彪悍）
 	}
 
     @Test
