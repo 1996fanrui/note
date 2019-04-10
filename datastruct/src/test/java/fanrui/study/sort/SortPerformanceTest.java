@@ -18,8 +18,8 @@ import org.junit.Test;
 public class SortPerformanceTest {
     private int arrayCount = 10000;
     private int arrayLength = 500;
-//    private int arrayCount = 500;
-//    private int arrayLength = 10000;
+//    private int arrayCount = 50;
+//    private int arrayLength = 100000;
     private int[][] array;
     private ISort sort;
     private long startTime;
@@ -72,13 +72,20 @@ public class SortPerformanceTest {
 
 	@Test
 	public void testMergeSort(){
-		sort = new MergeSort();     // 数组长度变成 500，10000个数组 400ms（如果数组长度变成10000，500个数组，那么归并会比插入排序彪悍很多）
+		sort = new MergeSort();     // 数组长度变成 500，10000个数组 400ms（如果数组长度变成100000，50个数组，那么归并会比插入排序彪悍很多）
 	}
 
-	@Test
-	public void testQuickSort(){
-		sort = new QuickSort();     // 数组长度变成 500，10000个数组 200ms（如果数组长度变成10000，500个数组，那么快排性能很彪悍）
-	}
+    @Test
+    public void testQuickSort(){
+        sort = new QuickSort();     // 数组长度变成 500，10000个数组 200ms（如果数组长度变成100000，50个数组，那么快排性能很彪悍）
+    }
+
+    @Test
+    public void testQuick3WaySort(){
+        // 数组长度变成 500，10000个数组 200ms（如果数组长度变成100000，50个数组，那么快排性能很彪悍）
+        // 当数值重复较多时，三路快排会比普通快排高效很多
+        sort = new Quick3WaySort();
+    }
 
     @Test
     public void testCountingSort(){
@@ -86,12 +93,11 @@ public class SortPerformanceTest {
     }
 
 
-//	@Test
-//	public void testInsertOptimizeSort(){
-//		sort = new InsertOptimizeSort();
-//		sort.sort(array);
-//		validate();
-//	}
+    @Test
+    public void testArraysSort(){
+        sort = new ArraysSort();
+    }
+
 
 	private void printArray(int[] printArray){
         System.out.print("[");

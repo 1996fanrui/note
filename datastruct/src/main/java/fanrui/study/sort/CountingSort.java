@@ -9,6 +9,7 @@ package fanrui.study.sort;
  */
 public class CountingSort implements ISort  {
 
+    @Override
     public void sort(int[] array) {
         if (array.length <= 1) {
           return;

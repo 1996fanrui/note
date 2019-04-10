@@ -62,10 +62,15 @@ public class SortBaseTest {
 		sort = new MergeSort();
 	}
 
-	@Test
-	public void testQuickSort(){
-		sort = new QuickSort();
-	}
+    @Test
+    public void testQuickSort(){
+        sort = new QuickSort();
+    }
+
+    @Test
+    public void testQuick3WaySort(){
+        sort = new Quick3WaySort();
+    }
 
     @Test
     public void testCountingSort(){
