@@ -64,12 +64,22 @@
     
     - 注：数组的随机访问只有按下标访问才是O(1)
 
-   
+- 链表练习题（[源码 click here](../../../src/main/java/fanrui/study/linkedlist)）
 
-[back](../)
+    1. [单链表反转](../../../src/main/java/fanrui/study/linkedlist/Reverse.java)
+    
+    2. [检测链表是否有环](../../../src/main/java/fanrui/study/linkedlist/CheckCircle.java)
+    
+    3. [删除链表倒数第 k 个结点](../../../src/main/java/fanrui/study/linkedlist/DeleteLastKthNode.java)
+    
+    4. [求链表的中间结点](../../../src/main/java/fanrui/study/linkedlist/FindMiddleNode.java)
+    
+    5. [有序链表合并](../../../src/main/java/fanrui/study/linkedlist/MergeSortedLists.java)
 
-[last](../1.数组)
+### [*back*](../)
 
-[next](../3.栈)
+### [*last*](../1.数组)
+
+### [*next*](../3.栈)
 
 
