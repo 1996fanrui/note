@@ -6,7 +6,7 @@ package fanrui.study.sort;
  * @time 2019-04-09 15:19:32
  * @desc 优化在于 通过二分查找，找出需要插入的位置，大量减少了比较次数，数组长度较长时，此优化点比较明显
  */
-public class OptimizeInsertSort implements ISort {
+public class BinaryInsertSort implements ISort {
 
 
 	public void sort(int[] array) {
