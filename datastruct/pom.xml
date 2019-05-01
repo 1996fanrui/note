@@ -44,5 +44,14 @@
         </dependency>
 
 
+        <!-- https://mvnrepository.com/artifact/com.github.alexandrnikitin/bloom-filter -->
+        <dependency>
+            <groupId>com.github.alexandrnikitin</groupId>
+            <artifactId>bloom-filter_2.11</artifactId>
+            <version>0.11.0</version>
+        </dependency>
+
+
+
     </dependencies>
 </project>
